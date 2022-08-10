@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Multiple TextView Undo Redo</string>
+    <string name="update">Update</string>
+    <string name="undo">Undo</string>
+    <string name="hi_developer">Hi Developer</string>
+    <string name="hi_programmer">Hi Programmer</string>
+</resources>
