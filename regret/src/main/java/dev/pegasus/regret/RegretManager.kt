@@ -1,9 +1,10 @@
-package dev.pegasus.multipletextviewundoredo
+package dev.pegasus.regret
 
 import android.widget.TextView
-import io.github.muddz.regret.Regret
+import dev.pegasus.regret.helper.Regret
+import dev.pegasus.regret.interfaces.RegretListener
 
-class RegretManager : Regret.RegretListener {
+class RegretManager : RegretListener {
 
     private val regret = Regret(this)
     private var textView: TextView? = null
@@ -51,5 +52,4 @@ class RegretManager : Regret.RegretListener {
     override fun onCanDo(canUndo: Boolean, canRedo: Boolean) {
 
     }
-
 }

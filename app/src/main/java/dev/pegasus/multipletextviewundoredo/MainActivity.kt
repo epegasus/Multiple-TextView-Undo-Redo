@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import dev.pegasus.multipletextviewundoredo.databinding.ActivityMainBinding
+import dev.pegasus.regret.RegretManager
 
 class MainActivity : AppCompatActivity() {
 
