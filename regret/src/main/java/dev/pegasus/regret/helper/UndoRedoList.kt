@@ -1,5 +1,7 @@
 package dev.pegasus.regret.helper
 
+import dev.pegasus.regret.enums.CaseType
+
 class UndoRedoList {
     private var head: Node? = null
     private var pointer: Node? = null
@@ -20,7 +22,7 @@ class UndoRedoList {
      * Adds an key-values pair data to the collection.
      * Both currentValue and newValue should be of the same key identifier
      */
-    fun add(key: String, currentValue: Any, newValue: Any) {
+    fun add(key: CaseType, currentValue: Any, newValue: Any) {
         val oldNode = Node(Action(key, currentValue))
         val newNode = Node(Action(key, newValue))
         if (head == null || pointer === head) {

@@ -1,5 +1,6 @@
 package dev.pegasus.regret.helper
 
+import dev.pegasus.regret.enums.CaseType
 import dev.pegasus.regret.interfaces.RegretListener
 
 class Regret(listener: RegretListener) {
@@ -17,7 +18,7 @@ class Regret(listener: RegretListener) {
      * @param currentValue the current value
      * @param newValue     the new value
      */
-    fun add(key: String, currentValue: Any, newValue: Any) {
+    fun add(key: CaseType, currentValue: Any, newValue: Any) {
         undoRedoList.add(key, currentValue, newValue)
         updateCanDoListener()
     }

@@ -5,6 +5,8 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import dev.pegasus.multipletextviewundoredo.databinding.ActivityMainBinding
 import dev.pegasus.regret.RegretManager
+import dev.pegasus.regret.enums.CaseType
+import dev.pegasus.regret.interfaces.RegretListener
 
 class MainActivity : AppCompatActivity() {
 
@@ -31,8 +33,26 @@ class MainActivity : AppCompatActivity() {
 
     private fun initRegretManagers() {
         regretManagerArrayList.apply {
-            add(RegretManager())
-            add(RegretManager())
+            add(RegretManager(this@MainActivity, object : RegretListener{
+                override fun onDo(key: CaseType, value: Any?) {
+
+                }
+
+                override fun onCanDo(canUndo: Boolean, canRedo: Boolean) {
+
+                }
+
+            }))
+            add(RegretManager(this@MainActivity, object : RegretListener{
+                override fun onDo(key: CaseType, value: Any?) {
+
+                }
+
+                override fun onCanDo(canUndo: Boolean, canRedo: Boolean) {
+
+                }
+
+            }))
         }
         regretManagerList[0].setView(binding.tv1Main)
         regretManagerList[0].setPreviousText(binding.tv1Main.text.toString())
